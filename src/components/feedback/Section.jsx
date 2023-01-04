@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import Notification from './Notification';
 
 class Section extends Component {
+
+    static propTypes = {
+        title: PropTypes.string,
+    }
+
     state = {
         good: 0,
         neutral: 0,
@@ -34,7 +40,7 @@ class Section extends Component {
         this.options.visual = true
     };
 
-     render() {
+    render() {
         return (
             <section>
                 <h1>{this.props.title}</h1>
